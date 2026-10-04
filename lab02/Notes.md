@@ -4,3 +4,7 @@
 
 Git
 Github
+
+git status
+git diff
+git diff --staged
