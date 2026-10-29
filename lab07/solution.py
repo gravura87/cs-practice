@@ -23,10 +23,30 @@ def block(matrix, rows, columns):
     result = arr[np.ix_(rows, columns)]
     return np.round(result, 6).tolist()
 
+'''
 matrix = [
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9]
 ]
 
-print(block(matrix, [2, 0], [1, 2]))
+#print(block(matrix, [2, 0], [1, 2]))
+'''
+
+def column_means(matrix):
+    if len(matrix) == 0:
+        return []
+
+    arr = np.array(matrix)
+    return np.round(np.mean(arr, axis=0), 6).tolist()
+
+print(column_means(matrix))
+
+def column_range(matrix, column):
+    arr = np.array(matrix)
+
+    if arr.size == 0:
+        return 0
+
+    values = arr[:, columns]
+    return round(float(np.max(values) - np.min(values)), 6)
