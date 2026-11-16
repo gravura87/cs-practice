@@ -22,6 +22,7 @@ def read_rows(lines):
 
     return rows
 
+
 def count_types(rows):
     counts = {}
 
@@ -35,6 +36,7 @@ def count_types(rows):
 
     return counts
 
+
 def total_minutes(rows, kind):
     total = 0.0
 
@@ -47,3 +49,12 @@ def total_minutes(rows, kind):
                 continue
 
     return round(total, 1)
+
+
+def to_csv(counts):
+    result = "тип,количество\n"
+
+    for kind in sorted(counts):
+        result += f"{kind},{counts[kind]}\n"
+
+    return result
